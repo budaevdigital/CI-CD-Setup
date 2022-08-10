@@ -27,7 +27,13 @@ jobs:
       run: |
         # запуск проверки проекта c Black
         black --check .
-    - name: Test with flake8 and django tests
+    - name: Test with flake8
       run: |
         # запуск проверки проекта по flake8
         python -m flake8
+    - name: Test django tests
+      run: |
+        # перейти в папку, содержащую manage.py
+        cd infra_project/
+        # запустить тесты
+        python manage.py test
