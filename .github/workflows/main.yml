@@ -5,20 +5,16 @@ on: [push]
 jobs:
   lint:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - uses: psf/black@stable
-    
         with: 
           options: "--check --line-length 79"
           src: "."
           version: "22.6"
-
   tests:
     # «Раннер» — создание изолированного окружения с последней версией Ubuntu
     runs-on: ubuntu-latest
-
     steps:
     # Запуск actions checkout — готового скрипта
     # для клонирования репозитория
@@ -30,7 +26,6 @@ jobs:
       with:
         # Выбор версии Python
         python-version: 3.10
-
     - name: Install dependencies
       run: |
         # обновление pip 
