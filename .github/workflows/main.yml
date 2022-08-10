@@ -33,9 +33,8 @@ jobs:
         # установка flake8 и его плагинов
         pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort  
         # установка зависимостей
-        pip install -r requirements.txt
-      - name: Test with flake8 and django tests
-        run: |
-          # запуск проверки проекта по flake8
-          run: echo Запуск проверки flake8
-          python -m flake8
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Test with flake8 and django tests
+      run: |
+        # запуск проверки проекта по flake8
+        python -m flake8
