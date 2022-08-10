@@ -36,7 +36,4 @@ jobs:
         # перейти в папку, содержащую manage.py
         cd infra_project/
         # запустить тесты
-        python manage.py makemigrations
-        python manage.py migrate
-        python manage.py runserver
         python manage.py test
