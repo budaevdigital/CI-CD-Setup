@@ -3,15 +3,15 @@ name: Django-app workflow
 on: [push]
 
 jobs:
-  # lint:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: psf/black@stable
-  #       with: 
-  #         options: "--check --line-length 79"
-  #         src: "."
-  #         version: "22.6.0"
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: psf/black@stable
+        with: 
+          options: "--check --line-length 79"
+          src: "."
+          version: "22.6.0"
   tests:
     # «Раннер» — создание изолированного окружения с последней версией Ubuntu
     runs-on: ubuntu-latest
