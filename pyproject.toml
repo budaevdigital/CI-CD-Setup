@@ -6,7 +6,7 @@ exclude = '''
 /(
   ^/venv
   | migrations
-  | infra_project/infra_project/settings.py
+  | settings.py
   | .eggs
   | .git
   | .hg
@@ -22,11 +22,3 @@ exclude = '''
   | Dockerfile
 )/
 '''
-
-[tool.isort]
-atomic = true
-profile = "black"
-line_length = 79
-skip_gitignore = true
-skip_glob = ["src/blib2to3", "tests/data", "profiling"]
-known_first_party = ["black", "blib2to3", "blackd", "_black_version"]
